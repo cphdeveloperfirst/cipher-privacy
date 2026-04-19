@@ -62,217 +62,214 @@
 <body>
     <div class="container">
         <h1>CIPHER</h1>
-        <p class="subtitle">Privacy Policy / Политика конфиденциальности</p>
-        <p class="subtitle">Effective Date: March 21, 2026</p>
+        <p class="subtitle">Privacy Policy</p>
+        <p class="subtitle">Effective Date: April 19, 2026 &middot; Version 2026-04-19</p>
 
         <div class="section">
             <h2>1. General Provisions</h2>
-            <p>1.1. This Privacy Policy defines the procedure for processing and protecting personal data of users of the CIPHER mobile application.</p>
-            <p>1.2. By using the Application, you confirm your consent to the terms of this Policy. If you do not agree with these terms, please refrain from using the Application.</p>
-            <p>1.3. Data Controller: CIPHER Team<br>Contact email: support@cipher-app.com</p>
+            <p>1.1. This Privacy Policy ("Policy") describes how VEXNODE LLC processes and protects personal data of users ("you", "User") of the CIPHER mobile application ("App").</p>
+            <p>1.2. By installing, registering in, or continuing to use the App, you acknowledge that you have read and understood this Policy. Where this Policy requires your explicit consent (see Section 2C), you will be asked to provide it affirmatively in-app before the corresponding processing begins.</p>
+            <p>1.3. <strong>Data Controller:</strong></p>
+            <ul>
+                <li>VEXNODE LLC (შპს ვექსნოუდ)</li>
+                <li>Registered in Georgia, Tax Identification Number (TIN) 405850066</li>
+                <li>Contact email: <a href="mailto:ciph.official@gmail.com">ciph.official@gmail.com</a></li>
+            </ul>
+            <p>1.4. <strong>Scope.</strong> This Policy applies to all users globally. Users in the European Economic Area (EEA) and the United Kingdom are covered by the GDPR / UK GDPR rights described in Section 9.</p>
         </div>
 
         <div class="section">
             <h2>2. Data We Collect</h2>
             <div class="highlight">
-                <strong>Required Data:</strong>
+                <strong>2A. Required Account Data:</strong>
                 <ul>
-                    <li>Phone number — for authorization and account recovery</li>
-                    <li>Email address — for notifications and account recovery</li>
-                    <li>Username — for identification in the system</li>
+                    <li>Phone number &mdash; for account creation, authentication, and account recovery.</li>
+                    <li>Email address &mdash; for service notifications and account recovery.</li>
+                    <li>Username &mdash; for in-app identification.</li>
+                    <li>Date of birth &mdash; to verify that you are 18 or older (see Section 11). Only your age is stored; the exact date is not retained after verification.</li>
                 </ul>
             </div>
             <div class="highlight">
-                <strong>KYC Verification Data:</strong>
+                <strong>2B. Optional Identity Verification (KYC):</strong>
                 <ul>
-                    <li>Photo of identity document</li>
-                    <li>Video recording of user's face following on-screen instructions</li>
+                    <li>Photograph of a government-issued identity document.</li>
+                    <li>Short video recording of the User's face following on-screen instructions ("liveness video").</li>
+                </ul>
+                <p>KYC is optional and is only requested when required by law or to protect the integrity of in-app features (for example, to deter duplicate or fraudulent accounts). KYC documents and liveness video are encrypted in transit (TLS) and at rest, stored on a cloud infrastructure provider (Supabase, see Section 5), and accessible only to a limited set of authorized personnel.</p>
+            </div>
+            <div class="highlight">
+                <strong>2C. Biometric Data (Special Category &mdash; GDPR Article 9):</strong>
+                <ul>
+                    <li><strong>On-device biometrics (Face ID / Touch ID / fingerprint):</strong> used solely to unlock the CIPHER Vault on your device. This data is processed entirely within your device's secure enclave by the operating system; CIPHER does not receive, transmit, or store the biometric template itself.</li>
+                    <li><strong>KYC liveness video:</strong> contains facial imagery which, when processed for unique identification, qualifies as biometric data for the purposes of GDPR Article 9.</li>
+                </ul>
+                <p><strong>Legal basis:</strong> your <em>explicit consent</em> under GDPR Article 9(2)(a), obtained in-app before the KYC flow begins. You can withdraw consent at any time by requesting account deletion (see Section 9A); withdrawal does not affect the lawfulness of processing before the withdrawal.</p>
+                <p><strong>Retention:</strong> KYC documents and liveness video are retained only as long as strictly necessary to complete verification and to comply with applicable anti-fraud and legal-record-keeping obligations, and are deleted no later than 30 days after account deletion (see Section 9A). Older unverified KYC submissions are purged on a rolling basis.</p>
+            </div>
+            <div class="highlight">
+                <strong>2D. Automatically Collected Data:</strong>
+                <ul>
+                    <li>Device identifier (non-advertising) and basic device characteristics (OS version, device model) &mdash; for security, abuse prevention, and technical support.</li>
+                    <li>Approximate country &mdash; derived from your IP address or, where granted, from the Location permission.</li>
+                    <li>Push notification token &mdash; to deliver push notifications if you have opted in.</li>
+                    <li>App activity data &mdash; features you use, screens you view, session duration, and technical errors; used in aggregate to improve the App.</li>
+                    <li><strong>Precise location (GPS):</strong> used only when you grant the Location permission, exclusively to render the in-app World Map feature. Location data is processed by Google Maps SDK on your device and is not retained by CIPHER beyond the current session unless explicitly stated in-app.</li>
                 </ul>
             </div>
             <div class="highlight">
-                <strong>Biometric Data:</strong>
-                <ul>
-                    <li>Biometric authentication data (Face ID / fingerprint): Used to protect your CIPHER Vault. Biometric data is processed locally on your device and is never transmitted to our servers.</li>
-                </ul>
-            </div>
-            <div class="highlight">
-                <strong>Automatically Collected Data:</strong>
-                <ul>
-                    <li>Device ID</li>
-                    <li>Country code</li>
-                    <li>Push notification token</li>
-                    <li>App activity data</li>
-                    <li>Precise location (GPS): Used for the World Map feature to display miners by country. Location access is optional and requires your permission. Location data may be processed by Google Maps SDK.</li>
-                </ul>
+                <strong>2E. End-to-End Encrypted Chat Data:</strong>
+                <p>Messages sent through the CIPHER encrypted chat feature are encrypted on the sender's device using the Curve25519/XSalsa20-Poly1305 construction and can only be decrypted by the intended recipient(s). VEXNODE LLC cannot access, read, or recover the plaintext content of these messages. We store only the opaque ciphertext, routing metadata (sender, recipient, timestamp), and message-level nonces required to deliver the message.</p>
             </div>
         </div>
 
         <div class="section">
-            <h2>3. Purpose of Data Processing</h2>
+            <h2>3. Purpose and Legal Basis of Processing</h2>
+            <p>We process personal data only where we have a lawful basis to do so. For users covered by the GDPR / UK GDPR, the applicable legal basis is stated below next to each purpose.</p>
             <ul>
-                <li>Providing access to Application features</li>
-                <li>Awarding rewards for mining and watching ads</li>
-                <li>KYC verification — confirming that rewards go to real users and improving ad quality</li>
-                <li>Sending notifications about new features and events</li>
-                <li>Ensuring account security</li>
-                <li>Improving service quality</li>
-                <li>Preventing fraud and abuse</li>
+                <li><strong>Provide the App and core features</strong> &mdash; performance of a contract (Art. 6(1)(b) GDPR).</li>
+                <li><strong>Account security, fraud prevention, abuse prevention</strong> &mdash; legitimate interests (Art. 6(1)(f) GDPR) and, where required, compliance with legal obligations (Art. 6(1)(c) GDPR).</li>
+                <li><strong>KYC identity verification, including biometric liveness</strong> &mdash; your explicit consent (Art. 6(1)(a) and Art. 9(2)(a) GDPR).</li>
+                <li><strong>Service notifications and transactional emails</strong> &mdash; performance of a contract (Art. 6(1)(b) GDPR).</li>
+                <li><strong>Aggregate analytics and product improvement</strong> &mdash; legitimate interests (Art. 6(1)(f) GDPR); where required by law, your consent.</li>
+                <li><strong>Responding to lawful requests from public authorities</strong> &mdash; compliance with legal obligations (Art. 6(1)(c) GDPR).</li>
             </ul>
         </div>
 
         <div class="section">
-            <h2>4. Data Storage and Protection</h2>
-            <p>4.1. Personal data is stored on secure servers using modern encryption methods (SSL/TLS).</p>
-            <p>4.2. Access to personal data is limited to authorized personnel who are required to maintain confidentiality.</p>
-            <p>4.3. KYC verification data is stored in encrypted form and used exclusively to verify user identity.</p>
-            <p>4.4. Data retention period — entire period of Application use and 3 years after account deletion.</p>
-        </div>
-
-        <div class="section">
-            <h2>5. Third-Party Data Sharing</h2>
-            <p>5.1. We do NOT sell or share your personal data with third parties for marketing purposes.</p>
-            <p>5.2. Data may be shared with:</p>
-            <div class="highlight">
-                <strong>Advertising Partners:</strong>
-                <ul>
-                    <li>Google AdMob — for displaying rewarded ads</li>
-                    <li>Users decide whether to watch ads to receive in-app rewards (energy, coins). Ads cannot be disabled, but viewing is not mandatory — without it, users simply don't receive the corresponding rewards.</li>
-                </ul>
-            </div>
-            <div class="highlight">
-                <strong>Infrastructure Partners:</strong>
-                <ul>
-                    <li>Supabase — secure cloud storage for KYC documents (encrypted)</li>
-                    <li>Expo Push Notification Service — for delivering push notifications</li>
-                    <li>Render — server hosting</li>
-                    <li>Google Maps Platform — for World Map feature and location processing</li>
-                </ul>
-            </div>
-            <p><strong>Government Authorities:</strong> Upon request in accordance with applicable law.</p>
-        </div>
-
-        <div class="section">
-            <h2>6. Blockchain and Cryptocurrency</h2>
-            <p>6.1. CIPHER uses $CIPH token — a BEP-20 cryptocurrency on BNB Smart Chain.</p>
-            <p>6.2. Your in-app balance is stored on our secure servers. Blockchain withdrawal requires KYC verification.</p>
-            <p>6.3. When you withdraw $CIPH to your wallet, the transaction is recorded on the public BNB Smart Chain blockchain.</p>
-            <p>6.4. Your BSC wallet address (if provided) is stored securely and used only for withdrawals.</p>
-            <div class="highlight">
-                <strong>Important:</strong> Blockchain transactions are public and irreversible. Your wallet address and transaction amounts are visible on block explorers like BscScan.
-            </div>
-            <div class="highlight" style="background: rgba(255,77,106,0.1); border-left-color: #FF4D6A;">
-                <strong>⚠️ RISK WARNING:</strong>
-                <p style="margin-top: 10px;">Cryptocurrencies are high-risk assets. The value of $CIPH may fluctuate significantly and could potentially decrease to zero. Past performance is not indicative of future results.</p>
-                <ul style="margin-top: 10px;">
-                    <li>$CIPH is NOT an investment product and should not be treated as such</li>
-                    <li>Nothing in this Application constitutes financial, investment, legal, or tax advice</li>
-                    <li>You should only participate with funds you are prepared to lose entirely</li>
-                    <li>CIPHER Team is not responsible for any financial losses incurred through app usage</li>
-                    <li>Cryptocurrency markets are volatile and subject to regulatory changes</li>
-                </ul>
-                <p style="margin-top: 10px;"><strong>Always conduct your own research and consider consulting a qualified financial advisor before making any decisions involving cryptocurrency.</strong></p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>6A. Jurisdiction and Compliance</h2>
-            <p>6A.1. <strong>User Responsibility:</strong> You are solely responsible for determining whether your use of CIPHER and $CIPH token complies with all applicable laws and regulations in your jurisdiction.</p>
-            <p>6A.2. CIPHER does not provide services in any jurisdiction where cryptocurrency activities are prohibited by law.</p>
-            <p>6A.3. By using this Application, you represent and warrant that:</p>
+            <h2>4. Data Storage, Protection, and Retention</h2>
+            <p>4.1. Personal data is stored on servers operated by reputable cloud providers (see Section 5), protected by TLS in transit and by provider-managed encryption at rest.</p>
+            <p>4.2. Access to personal data is limited to authorized personnel who are bound by confidentiality obligations.</p>
+            <p>4.3. KYC documents and liveness video are segregated from account data, encrypted at rest, and accessed only for verification, abuse investigation, or response to lawful requests.</p>
+            <p>4.4. <strong>Retention periods:</strong></p>
             <ul>
-                <li>Your use of CIPHER is legal in your country of residence</li>
-                <li>You are not located in, or a citizen/resident of any jurisdiction where cryptocurrency is prohibited</li>
-                <li>You will comply with all local laws regarding cryptocurrency and digital assets</li>
+                <li>Account data (phone, email, username, app activity): for the duration of your account, plus the 30-day recovery period described in Section 9A, after which it is permanently deleted or anonymized.</li>
+                <li>KYC documents and liveness video: deleted no later than 30 days after account deletion or withdrawal of KYC consent, whichever comes first.</li>
+                <li>Server-side security and abuse logs: up to 12 months after the log event, for fraud prevention and legal defence.</li>
+                <li>Billing and tax records (if any): retained as required by applicable Georgian tax law.</li>
             </ul>
-            <div class="highlight" style="background: rgba(240,180,41,0.1); border-left-color: #F0B429;">
-                <strong>Disclaimer:</strong> CIPHER Team is not responsible for any legal consequences arising from your use of the Application in jurisdictions where such use may be restricted or prohibited. It is your obligation to ensure compliance with your local laws.
-            </div>
         </div>
 
         <div class="section">
-            <h2>7. Privacy Features</h2>
-            <p>7.1. <strong>End-to-End Encrypted Chat:</strong> Messages in CIPHER chat are encrypted using XSalsa20-Poly1305. Only you and your recipient can read them. We cannot access message contents.</p>
-            <p>7.2. <strong>CIPHER Vault:</strong> Your private notes are encrypted locally using AES-256 with your personal key. Data is stored encrypted on our servers — we cannot decrypt it.</p>
-            <p>7.3. Encryption keys are derived from your account credentials and never transmitted to our servers.</p>
+            <h2>5. Service Providers (Processors) and International Transfers</h2>
+            <p>5.1. We do <strong>not</strong> sell your personal data and we do <strong>not</strong> share it with third parties for their own marketing purposes.</p>
+            <p>5.2. We engage the following categories of service providers (data processors) who process personal data only on our documented instructions:</p>
+            <div class="highlight">
+                <strong>Infrastructure and Operations:</strong>
+                <ul>
+                    <li><strong>Supabase</strong> (United States) &mdash; managed Postgres database and secure file storage for KYC documents (encrypted at rest).</li>
+                    <li><strong>Render</strong> (United States) &mdash; application server hosting.</li>
+                    <li><strong>Expo (Expo Application Services)</strong> (United States) &mdash; over-the-air updates and push notification delivery.</li>
+                    <li><strong>Google Maps Platform</strong> &mdash; map tiles and geocoding for the World Map feature.</li>
+                </ul>
+            </div>
+            <div class="highlight">
+                <strong>Advertising (where enabled):</strong>
+                <ul>
+                    <li><strong>Google AdMob</strong> &mdash; serves optional rewarded and interstitial ads. Viewing ads is voluntary; declining to view ads simply means you do not receive the corresponding in-app reward. Google's own <a href="https://policies.google.com/privacy">Privacy Policy</a> governs any data Google collects through AdMob.</li>
+                </ul>
+            </div>
+            <p>5.3. <strong>International transfers.</strong> Some of the providers listed above are located in the United States. When we transfer personal data of EEA / UK users outside the EEA / UK, we rely on the European Commission's Standard Contractual Clauses (SCCs) or on adequacy decisions where available, together with supplementary technical and organizational measures (TLS in transit, encryption at rest, access controls, logging).</p>
+            <p>5.4. <strong>Public authorities.</strong> We may disclose personal data to competent public authorities where we are legally required to do so, provided that the request is lawful, specific, and proportionate.</p>
+        </div>
+
+        <div class="section">
+            <h2>6. In-App Virtual Currency ($CIPH)</h2>
+            <p>6.1. $CIPH is an in-app virtual currency used exclusively within the App. $CIPH is <strong>not</strong> a cryptocurrency, is <strong>not</strong> a token issued on any blockchain, is <strong>not</strong> traded on any exchange, and is <strong>not</strong> transferable to wallets or services outside the App. $CIPH has no real-world monetary value and cannot be exchanged for cash, fiat currency, goods, or services outside the App.</p>
+            <p>6.2. Your $CIPH balance is an internal ledger entry maintained on our servers. No personal data beyond your account identifier is required to operate this ledger.</p>
+            <p>6.3. For full terms governing $CIPH, please see the <a href="terms.html">Terms of Service</a>.</p>
+        </div>
+
+        <div class="section">
+            <h2>7. Encrypted Features</h2>
+            <p>7.1. <strong>End-to-End Encrypted Chat.</strong> Messages sent through the CIPHER chat feature are encrypted on the sender's device using Curve25519 key agreement and XSalsa20-Poly1305 authenticated encryption. Only the intended recipient(s) can decrypt the plaintext. We store ciphertext and routing metadata only and cannot read your messages.</p>
+            <p>7.2. <strong>CIPHER Vault.</strong> Notes stored in the CIPHER Vault are encrypted locally on your device using AES-256 with a key derived from a password you choose. The encrypted blob is synchronized to our servers so you can restore it on a new device; we cannot decrypt the contents.</p>
+            <p>7.3. If you lose your chat keys or your Vault password, we are unable to recover your data. Please use the in-app backup features where offered.</p>
         </div>
 
         <div class="section">
             <h2>8. Raids and Social Features</h2>
-            <p>8.1. CIPHER includes a "Raids" feature where users can interact with inactive accounts.</p>
-            <p>8.2. <strong>What other users can see:</strong></p>
+            <p>8.1. The App may include "Raid" and similar social features where Users can interact with other inactive accounts.</p>
+            <p>8.2. In these features, other Users only see:</p>
             <ul>
-                <li>Anonymized identifier (e.g., "Agent #A1B2")</li>
-                <li>Approximate balance range</li>
-                <li>Days of inactivity</li>
+                <li>An anonymized agent identifier (for example, "Agent #A1B2").</li>
+                <li>A coarse balance range (not the exact balance).</li>
+                <li>An approximate inactivity indicator.</li>
             </ul>
-            <p>8.3. Your real identity, phone number, and personal details are NEVER shown to other users.</p>
-            <p>8.4. Clan membership provides protection from raids. Inactive clan members (14+ days) may lose some protection.</p>
+            <p>8.3. Your real identity, phone number, email, and KYC data are never shown to other Users.</p>
+            <p>8.4. Clan membership may provide partial protection from raids. Prolonged inactivity may reduce this protection; the exact mechanics are described in-app.</p>
         </div>
 
         <div class="section">
-            <h2>9. User Rights</h2>
-            <p>You have the right to:</p>
+            <h2>9. Your Rights</h2>
+            <p>Subject to applicable law, you have the following rights regarding your personal data:</p>
             <ul>
-                <li>Obtain information about stored data</li>
-                <li>Request correction of inaccurate data</li>
-                <li>Request deletion of account and all associated data</li>
-                <li>Withdraw consent to data processing (results in account deletion)</li>
-                <li>File a complaint with a supervisory authority</li>
+                <li><strong>Right of access</strong> &mdash; obtain a copy of the personal data we hold about you.</li>
+                <li><strong>Right to rectification</strong> &mdash; correct inaccurate or incomplete data.</li>
+                <li><strong>Right to erasure</strong> ("right to be forgotten") &mdash; request deletion of your account and associated data (see Section 9A).</li>
+                <li><strong>Right to restriction of processing</strong> &mdash; ask us to temporarily limit how we use your data.</li>
+                <li><strong>Right to data portability</strong> &mdash; receive the personal data you provided in a structured, commonly used, machine-readable format.</li>
+                <li><strong>Right to object</strong> &mdash; object to processing based on our legitimate interests, including profiling-like analytics.</li>
+                <li><strong>Right to withdraw consent</strong> &mdash; where we rely on your consent (notably for KYC biometrics), you can withdraw it at any time.</li>
+                <li><strong>Right to lodge a complaint</strong> &mdash; with a competent data-protection supervisory authority (for EEA users, typically the authority of your habitual residence).</li>
             </ul>
-            <p>To exercise your rights, contact: <a href="mailto:support@cipher-app.com">support@cipher-app.com</a></p>
+            <p>To exercise any of these rights, contact: <a href="mailto:ciph.official@gmail.com">ciph.official@gmail.com</a>. We respond within 30 days; where a request is complex or we receive many requests, we may extend this by a further 60 days and will inform you of the extension.</p>
         </div>
 
         <div class="section">
             <h2>9A. Account Deletion Process</h2>
-            <p>9A.1. You may request account deletion through the Application settings (Profile → Delete Account).</p>
-            <p>9A.2. <strong>30-Day Recovery Period:</strong> Upon requesting deletion, your account will be frozen for 30 days. During this period:</p>
+            <p>9A.1. You can request account deletion at any time. There are two ways:</p>
             <ul>
-                <li>You cannot access your account</li>
-                <li>Your data remains intact but is inaccessible</li>
-                <li>You can recover your account at any time by logging in with your credentials</li>
+                <li><strong>In-app:</strong> Profile &rarr; Delete Account.</li>
+                <li><strong>Web:</strong> <a href="https://cphdeveloperfirst.github.io/cipher-privacy/delete-account.html">https://cphdeveloperfirst.github.io/cipher-privacy/delete-account.html</a></li>
             </ul>
-            <p>9A.3. <strong>After 30 days:</strong> If not recovered, the following actions are taken:</p>
+            <p>9A.2. <strong>30-Day recovery window.</strong> Upon your request, your account is frozen for 30 days. During this window:</p>
             <ul>
-                <li>Your $CIPH balance is transferred to the community Prize Pool</li>
-                <li>All personal data (phone, email, username) is permanently deleted</li>
-                <li>All transaction history is deleted</li>
-                <li>KYC documents are permanently deleted from our storage</li>
-                <li>Referral relationships are anonymized</li>
+                <li>You cannot access the App using that account.</li>
+                <li>Your data is retained in an inaccessible state.</li>
+                <li>You can reactivate the account by logging in with your credentials.</li>
             </ul>
-            <div class="highlight" style="background: rgba(255,77,106,0.1); border-left-color: #FF4D6A;">
-                <strong>Important:</strong> Account deletion is irreversible after the 30-day period. Ensure you have withdrawn any $CIPH tokens you wish to keep before requesting deletion.
-            </div>
+            <p>9A.3. <strong>After 30 days</strong>, the following occurs automatically:</p>
+            <ul>
+                <li>Account identifiers (phone, email, username) are permanently erased from our production database.</li>
+                <li>KYC documents and liveness video are permanently deleted from Supabase storage.</li>
+                <li>In-app $CIPH balance is returned to the in-app reward pool (see Terms of Service §4).</li>
+                <li>Transaction history is deleted or irreversibly anonymized.</li>
+                <li>Referral relationships are anonymized.</li>
+            </ul>
+            <p>9A.4. Some information may persist in backups for up to 90 days before backup rotation removes it, and in legally required records (e.g., tax records) for the period required by law. These residual copies are not used for any operational purpose.</p>
         </div>
 
         <div class="section">
             <h2>10. Cookies and Analytics</h2>
-            <p>10.1. The Application uses analytical tools to collect anonymized usage statistics.</p>
-            <p>10.2. Collected data: feature usage frequency, time in app, technical errors.</p>
+            <p>10.1. The App does not use browser cookies (it is a native mobile application).</p>
+            <p>10.2. We collect aggregate, feature-level telemetry (e.g., how often a feature is used, session length, error counts) to improve the App. This telemetry is linked to a stable in-app account identifier but is not combined with advertising identifiers or sold.</p>
         </div>
 
         <div class="section">
             <h2>11. Age Restrictions</h2>
-            <p>11.1. The Application is intended for persons aged 18 and older.</p>
-            <p>11.2. We do not intentionally collect data from minors. If such data is discovered, it will be immediately deleted.</p>
+            <p>11.1. The App is intended exclusively for persons aged 18 and older.</p>
+            <p>11.2. We do not knowingly collect personal data from persons under 18. If we become aware that a user is under 18, we will deactivate the account and delete the associated personal data in accordance with Section 9A.</p>
+            <p>11.3. If you are a parent or guardian and believe your child has created an account, please contact <a href="mailto:ciph.official@gmail.com">ciph.official@gmail.com</a>.</p>
         </div>
 
         <div class="section">
             <h2>12. Policy Changes</h2>
-            <p>12.1. We reserve the right to make changes to this Policy.</p>
-            <p>12.2. Users will be notified of significant changes via push notifications or upon entering the Application.</p>
-            <p>12.3. Continued use of the Application after changes are made constitutes acceptance of the updated Policy.</p>
+            <p>12.1. We may update this Policy from time to time. The current version is identified by the Effective Date and Version string at the top of this page.</p>
+            <p>12.2. When changes are material, we will prompt you to review and re-accept the updated Policy inside the App before continuing to use affected features.</p>
+            <p>12.3. Continued use of the App after minor, non-material changes constitutes acceptance of the updated Policy.</p>
         </div>
 
         <div class="section">
-            <h2>13. Contact Information</h2>
-            <p>For all questions related to personal data processing:</p>
-            <p>Email: <a href="mailto:support@cipher-app.com">support@cipher-app.com</a></p>
-            <p>Application: CIPHER</p>
-            <p>Developer: CIPHER Team</p>
+            <h2>13. Contact</h2>
+            <p>For any privacy-related question or to exercise any right described in this Policy:</p>
+            <ul>
+                <li>Email: <a href="mailto:ciph.official@gmail.com">ciph.official@gmail.com</a></li>
+                <li>Data Controller: VEXNODE LLC, Georgia, TIN 405850066</li>
+            </ul>
         </div>
 
         <div class="footer">
-            <p>&copy; 2026 CIPHER. All rights reserved.</p>
+            <p>&copy; 2026 VEXNODE LLC. All rights reserved.</p>
         </div>
     </div>
 </body>
