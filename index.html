@@ -123,6 +123,20 @@
                 <strong>2E. End-to-End Encrypted Chat Data:</strong>
                 <p>Messages sent through the CIPHER encrypted chat feature are encrypted on the sender's device using the Curve25519/XSalsa20-Poly1305 construction and can only be decrypted by the intended recipient(s). VEXNODE LLC cannot access, read, or recover the plaintext content of these messages. We store only the opaque ciphertext, routing metadata (sender, recipient, timestamp), and message-level nonces required to deliver the message.</p>
             </div>
+            <div class="highlight">
+                <strong>2F. Device Permissions We Request:</strong>
+                <p>The App requests the following Android / iOS runtime permissions. Each is requested only for the purpose described below, and each can be granted or denied independently in your device settings. Denying a non-essential permission simply disables the corresponding feature.</p>
+                <ul>
+                    <li><strong>Camera</strong> &mdash; to scan QR codes (for invites and in-app payments) and to capture the identity-document photograph and liveness video during optional KYC.</li>
+                    <li><strong>Microphone (RECORD_AUDIO)</strong> &mdash; to record the audio track of the KYC liveness video.</li>
+                    <li><strong>Audio settings (MODIFY_AUDIO_SETTINGS)</strong> &mdash; routine Android permission used by the audio-playback library to route sound to the correct output during in-app audio cues. No audio is recorded under this permission.</li>
+                    <li><strong>Location (ACCESS_COARSE_LOCATION / ACCESS_FINE_LOCATION)</strong> &mdash; optional; used exclusively to render the in-app World Map feature. See Section 2D for retention.</li>
+                    <li><strong>Biometric (USE_BIOMETRIC / USE_FINGERPRINT)</strong> &mdash; to unlock the on-device CIPHER Vault via your device's secure enclave. No biometric template ever leaves the device. See Section 2C.</li>
+                    <li><strong>Notifications (POST_NOTIFICATIONS)</strong> &mdash; to deliver service notifications (session events, reward reminders) if you have opted in. Tokens are stored as described in Section 2D.</li>
+                    <li><strong>Vibration (VIBRATE)</strong> &mdash; short in-app haptic feedback. No data is collected.</li>
+                </ul>
+                <p>The App does <strong>not</strong> request access to your contacts, SMS, call log, external storage, or background location.</p>
+            </div>
         </div>
 
         <div class="section">
